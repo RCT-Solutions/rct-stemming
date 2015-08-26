@@ -1,0 +1,21 @@
+{
+  "name": "rct-stemming",
+  "version": "0.0.1",
+  "description": "Provides an implementation of Martin Porter Stemming Work.",
+  "author": "Richard Clarke <richard.clarke@rct-sol.com>",
+  "main": "index.js",
+  "keywords": [
+    "stemming"
+  ],
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "^2.2.4",
+    "should": "^6.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git@github.com/RCT-Solutions/rct-stemming.git"
+  }
+}
