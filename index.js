@@ -1,7 +1,6 @@
+'use strict';
 
 
-
-
-module.exports.initialise = function () {
-    
+module.exports = {
+    statistics: require('./lib/statistics')
 };
