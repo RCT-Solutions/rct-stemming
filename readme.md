@@ -187,32 +187,3 @@ eils
 1.  (m>0) NESS ->    		goodness ->	good
 
 
-
-        
-##Rule Structure
-The each rule will be made up of the following structure.
-
-    {
-        find: -> The text to find
-        action: -> What to do if the text is found, action is replace, ignore, single (replace double letters with a single letter)
-        replace: -> If action is replace then this is the text to replace the find text with.
-        measure: -> The minimum measure of the word that this rule will be applied to
-        formula: -> The formula to use to search for the find text
-    }
-        
-###Search Formula Operators
-
-These are the operands
-
-*    < = Start search from the right, generally this one is not mixed with any other operators
-*    R1 = Start search from position R1
-*    *V* = Start search after the first vowel        
-*    *@ = Start search after the first letter defined by @
-*    ?n = Word must have triggered rule n
-*    % = Double letters as tt in letters
-
-These are the operators
-
-*    ! = Is the NOT operator
-*    & = Is the AND operator
-*    | = Is the OR operator
