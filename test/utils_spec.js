@@ -92,4 +92,28 @@ describe('Testing the utils functions', function () {
         });
 
     });
+
+    describe('Checking if word end in CVC where the second C is not WXY', function(){
+        it('failing will fail the check', function(){
+            var result = {
+                original: 'Failing',
+                test: 'failing',
+                rulePassed: false,
+                current: ''
+            };
+            var actual = utils.cvcCheck(result);
+            actual.should.equal(false);
+        });
+        it('fil will pass the check', function(){
+            var result = {
+                original: 'fil',
+                test: 'fil',
+                rulePassed: false,
+                current: ''
+            };
+            var actual = utils.cvcCheck(result);
+            actual.should.equal(true);
+        });
+
+    });
 });
