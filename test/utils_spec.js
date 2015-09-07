@@ -116,4 +116,12 @@ describe('Testing the utils functions', function () {
         });
 
     });
+
+    describe('Get the longest word', function(){
+        it('The longest word will be testingthis', function(){
+            var words =  ['Test', 'testing', 'test1', 'testingthis', 'test3'];
+            var longest = utils.longestWord(words);
+            longest.should.equal('testingthis');
+        })
+    })
 });
