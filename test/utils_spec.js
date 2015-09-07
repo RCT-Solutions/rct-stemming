@@ -2,6 +2,18 @@ var should = require('should');
 var utils = require('../lib/utils')();
 
 describe('Testing the utils functions', function () {
+    describe('Checking if a letter is in an array of letters', function(){
+        it('a exists in ai', function(){
+            var actual = utils.letterCheck('a', ['a','i']);
+            actual.should.equal(true);
+        });
+
+        it('b does NOT exists in ai', function(){
+            var actual = utils.letterCheck('b', ['a','i']);
+            actual.should.equal(false);
+        });
+    });
+
     describe('Checking if a vowel or not', function () {
         it('a is vowel', function () {
             var actual = utils.isVowel('a');

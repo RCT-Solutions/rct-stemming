@@ -14,6 +14,18 @@ function testGroup(word){
 }
 
 describe('Step 2 of the Porter Stemming tests', function(){
+    describe('Check that bypass works', function () {
+        it('The word active will use skip', function () {
+            var result = stepTwo('active');
+
+            result.skipped.should.equal(true);
+        });
+        it('The word help will use NOT skip', function () {
+            var result = stepTwo('help');
+
+            result.skipped.should.equal(false);
+        });
+    });
     describe('Check the words for step 2',function(){
 
         var words = [{
