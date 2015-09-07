@@ -5,7 +5,7 @@ function testGroup(word) {
     describe('Statistics Tests ' + word.word, function () {
         var stats = {};
         before(function () {
-            stats = stemming(word.word);
+            stats = stemming.statistics(word.word);
         });
         it(word.word + ' is ' + word.word, function () {
             stats.word.should.equal(word.word);
