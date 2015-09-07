@@ -1,15 +1,14 @@
 #Stemming Helper
 This module will make available word stemming algorithm.  It will handle English to start with.
 
-#Installation Instructions.
-
-
 #Martin Porter Stemming Algorithm
+
+see [Martin Porter Stemming Algorithm](http://snowball.tartarus.org/algorithms/porter/stemmer.html) for full details.
 
 A consonant is a letter or word other then AEIOU and Y under specific conditions.
 A vowel is a non-consonant letter.
 
-denoted letters
+<b>Symbols Used</b>
 
 1.  c = consonant
 1.  v = vowel
@@ -27,7 +26,7 @@ denoted letters
 1.  *(condition) S1 -> S2
 1.  *(m > 1) EMENT ->
 
-##Condition
+<b>Conditions</b>
 
 1.  *S   - the stem ends with S (and similarly for the other letters).
 1.  *v*  - the stem contains a vowel
@@ -95,101 +94,6 @@ preceded by a vowel.  In English therefore pV would be defined as the position a
     V   C   C   V   C   C
       
       pV  
-      
-      
-##Steps
-There are 5 main steps which are broken down even more.
-        
-###Step 1a
-remove the i-suffixes.
-
-<b>Rules</b>
-
-1.  sses (<-'ss')       caresses -> caress
-1.  ies (<-'i')         ponies -> poni
-1.  ss ()               caress -> caress
-1.  s (delete)          cats -> cat
-     
-<b>IMPORTANT</b> 
-
-    Scan the word from right to left
-    delete is just replace with empty string ''
-        
-###Step 1b
-this is a really tricky part.
-        
-<b>Rules</b>
-
-1.  EED (R1 <- 'EE')
-1.  ED  (*v*)   conflated -> conflat sized -> siz tanned -> tann
-1.  ING (*v*)   troubling -> troubl hopping -> hopp falling -> fall failing -> fail filing -> fil
-
-If the second or third rule is successful then do the following
-
-1.  ATE (<-'AT')  conflat -> conflate
-1.  BLE (<-'BL')  troubl -> trouble
-1.  IZE (<-'IZ')  siz -> size
-1.  ((*d and not (*L or *S or *Z)) -> single letter) hopp -> hop tann-> tan fall -> fall
-1.  (m=1 and *o) ->     fail -> fail fil -> file
-
-###Step 1c
-
-<b>Rules</b>
-
-1. (*v*)Y -> I   happy -> happi
-                 sky -> sky
-                 
-###Step 2
-A quick check is to test the second to last character of the word for the following letters
-
-acelost 
-
-If found then do the following rules, else skip to Step 3.
-
-Those words ending in i have been modified by Step 1c
-
-<b>Rules</b>
-
-1.  (m>0) ATIONAL -> ATE    relational -> relate
-1.  (m>0) TIONAL -> TION    conditional -> condition rational -> rational(?)
-1.  (m>0) ENCI -> ENCE      valenci -> valence
-1.  (m>0) ANCI -> ANCE      hesitanci -> hesitance
-1.  (m>0) IZER -> IZE       digitizer -> digitize
-1.  (m>0) ABLI -> ABLE      conformabli -> conformable
-1.  (m>0) ALLI -> AL        radicalli -> radical
-1.  (m>0) ENTLI -> ENT      differentli -> different
-1.  (m>0) ELI -> E          vileli -> vile
-1.  (m>0) OUSLI -> OUS      analogousli -> analogous
-1.  (m>0) IZATION -> IZE    vietnamization -> vietnamize
-1.  (m>0) ATION -> ATE      predication -> predicate
-1.  (m>0) ATOR -> ATE       operator -> operate
-1.  (m>0) ALISM -> AL       feudalism -> feudal
-1.  (m>0) IVENESS -> IVE    decisiveness -> decisive
-1.  (m>0) FULNESS -> FUL    hopefulness	-> hopeful
-1.  (m>0) OUSNESS -> OUS	callousness	-> callous
-1.  (m>0) ALITI	-> AL 		formaliti -> formal
-1.  (m>0) IVITI	-> IVE		sensitiviti	-> sensitive
-1.  (m>0) BILITI ->	BLE		sensibiliti	-> sensible
-
-###Step 3
-A quick check is to test the last character of the word for the following letters
-
-eils
-
-<b>Rules</b>
-
-1.  (m>0) ICATE	-> IC 		triplicate -> triplic
-1.  (m>0) ATIVE ->    		formative -> form
-1.  (m>0) ALIZE	-> AL  		formalize -> formal
-1.  (m>0) ICITI	-> IC  		electriciti	-> electric
-1.  (m>0) ICAL -> IC   		electrical -> electric
-1.  (m>0) FUL ->     		hopeful	-> hope
-1.  (m>0) NESS ->    		goodness ->	good
-
-
-###Step 4
-###Step 5
-
 
 ##Notes
 Some of the rules are applied to the result of the previous rule and some are applied on the original word.  

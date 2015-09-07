@@ -1,6 +1,6 @@
 {
   "name": "rct-stemming",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Provides an implementation of Martin Porter Stemming Work.",
   "author": "Richard Clarke <richard.clarke@rct-sol.com>",
   "main": "index.js",
