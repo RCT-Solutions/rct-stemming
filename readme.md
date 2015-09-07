@@ -187,3 +187,9 @@ eils
 1.  (m>0) NESS ->    		goodness ->	good
 
 
+###Step 4
+###Step 5
+
+
+##Notes
+Some of the rules are applied to the result of the previous rule and some are applied on the original word.  

@@ -24,7 +24,7 @@ describe('Step 2 of the Porter Stemming tests', function(){
             expected: 'condition'
         }, {
             word: 'rational',
-            expected: 'rate' // Should be rational, but as it will be hit by the first check its really relate!
+            expected: 'rate' // Should be rational, but as it will be hit by the first check its really rate!
         }, {
             word: 'triplication',
             expected: 'triplicate'

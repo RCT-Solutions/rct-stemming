@@ -43,9 +43,10 @@ describe('Testing the utils functions', function () {
     describe('Replace the ending of a word if match', function () {
         it('delete ing of ending', function () {
             var result = {
+                original: 'Ending',
                 test: 'ending',
                 rulePassed: false,
-                current: 'End'
+                current: ''
             };
             var actual = utils.checkEnding(result, 'ing', '');
             actual.should.equal(true);
@@ -55,24 +56,26 @@ describe('Testing the utils functions', function () {
         });
         it('Replace ed of conflated with e', function () {
             var result = {
+                original: 'Conflated',
                 test: 'conflated',
                 rulePassed: false,
-                current: 'conflate'
+                current: ''
             };
             var actual = utils.checkEnding(result, 'ed', 'e');
             actual.should.equal(true);
-            result.current.should.equal('conflate');
+            result.current.should.equal('Conflate');
             result.rulePassed.should.equal(true);
         });
         it('Do not replace anything in ending', function () {
             var result = {
+                original: 'Ending',
                 test: 'ending',
                 rulePassed: false,
-                current: 'ending'
+                current: ''
             };
             var actual = utils.checkEnding(result, 'in', '');
             actual.should.equal(false);
-            result.current.should.equal('ending');
+            result.current.should.equal('');
             result.rulePassed.should.equal(false);
         });
 
