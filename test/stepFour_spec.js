@@ -67,6 +67,9 @@ describe('Step 4 of the Porter Stemming tests', function(){
         }, {
             word: 'bowdlerize',
             expected: 'bowdler'
+        }, {
+            word: 'anion',
+            expected: 'anion'
         }];
 
         for (var i = 0; i < words.length; i++) {
