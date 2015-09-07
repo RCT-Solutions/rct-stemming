@@ -8,7 +8,7 @@ function testGroup(word) {
             result = stemming.run(word.word);
         });
         it(word.word + ' should be ' + word.expected, function () {
-            result.current.should.equal(word.expected);
+            result.should.equal(word.expected);
         });
     });
 }
