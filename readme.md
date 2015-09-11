@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/RCT-Solutions/rct-stemming.svg?branch=master)](https://travis-ci.org/RCT-Solutions/rct-stemming)
 #Stemming Helper
 This module will make available word stemming algorithm.  It will handle English to start with.
 
